@@ -1,7 +1,8 @@
 package com.whitesky.common.utils;
 
 
-import com.android.WsdSerialnum;
+
+import com.wsd.android.WsdSerialnum;
 
 import java.io.BufferedReader;
 import java.io.File;
