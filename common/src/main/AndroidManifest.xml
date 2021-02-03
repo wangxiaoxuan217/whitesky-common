@@ -20,12 +20,7 @@
         android:allowBackup="true"
         android:largeHeap="true"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true">
-        <service
-            android:name=".service.SpeechRecognizerService"
-            android:enabled="true"
-            android:exported="true"/>
-    </application>
+        android:usesCleartextTraffic="true"/>
 
     <uses-permission android:name="android.permission.INTERNET" />
 
