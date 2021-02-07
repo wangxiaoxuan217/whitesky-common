@@ -13,7 +13,7 @@ import android.widget.PopupWindow;
 /**
  * Created by xiaoxuan 2020.08.06
  */
-class PopupController
+public class PopupController
 {
     private View mPopupView;// 弹窗布局View
     
