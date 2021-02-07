@@ -1,36 +1,37 @@
 package com.whitesky.common.base;
 
-public class BasePresenter<V extends BaseView>
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
+
+public abstract class BasePresenter<T extends BaseView>
 {
-    protected V mView;
-    
-    /**
-     * 绑定view，一般在初始化中调用该方法
-     *
-     * @param view view
-     */
-    public void attachView(V view)
+    protected Reference<T> mViewRef;
+
+    public void attachView(T view)
     {
-        this.mView = view;
+        // 同View建立关联
+        mViewRef = new WeakReference<T>(view);
     }
-    
-    /**
-     * 解除绑定view，一般在onDestroy中调用
-     */
-    
-    public void detachView()
+
+    protected T getView()
     {
-        this.mView = null;
+        // 获取View引用
+        return mViewRef.get();
     }
-    
-    /**
-     * View是否绑定
-     *
-     * @return
-     */
+
     public boolean isViewAttached()
     {
-        return mView != null;
+        // 判断是否与View建立关联
+        return mViewRef != null && mViewRef.get() != null;
     }
-    
+
+    public void detachView()
+    {
+        // 解除与View的关联
+        if (mViewRef != null)
+        {
+            mViewRef.clear();
+            mViewRef = null;
+        }
+    }
 }

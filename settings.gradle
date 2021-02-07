@@ -1,3 +1,4 @@
 rootProject.name = "MyCommonLib"
 include ':app'
 include ':common'
+include ':discovery'

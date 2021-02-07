@@ -28,18 +28,5 @@ android {
 }
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'com.github.open-android:Zxing:v1.0.3'
-    //websocket
-    implementation "org.java-websocket:Java-WebSocket:1.5.1"
-    // 引入support支持库的multidex库
-    implementation 'com.android.support:multidex:1.0.3'
-    //AutoDispose解决RxJava内存泄漏
-    implementation 'com.uber.autodispose2:autodispose:2.0.0'
-    implementation 'com.uber.autodispose2:autodispose-android:2.0.0'
-    implementation 'com.uber.autodispose2:autodispose-lifecycle:2.0.0'
-    implementation 'com.uber.autodispose2:autodispose-androidx-lifecycle:2.0.0'
-    implementation 'com.dyhdyh.support:count-down-timer:1.0.2'
 }
 
