@@ -26,8 +26,8 @@ public class PopupController
     private View mView;
     
     private Window mWindow;
-    
-    PopupController(Context context, PopupWindow popupWindow)
+
+    public PopupController(Context context, PopupWindow popupWindow)
     {
         this.mContext = context;
         this.mPopupWindow = popupWindow;
@@ -51,7 +51,7 @@ public class PopupController
     {
         return mPopupView;
     }
-    
+
     private void installContent()
     {
         if (mLayoutResId != 0)
@@ -91,7 +91,7 @@ public class PopupController
      *
      * @param level 0.0f-1.0f
      */
-    void setBackGroundLevel(float level)
+    public  void setBackGroundLevel(float level)
     {
         mWindow = ((Activity)mContext).getWindow();
         WindowManager.LayoutParams params = mWindow.getAttributes();
@@ -118,8 +118,8 @@ public class PopupController
         mPopupWindow.setOutsideTouchable(touchable);// 设置outside可点击
         mPopupWindow.setFocusable(touchable);
     }
-    
-    static class PopupParams
+
+    public  static class PopupParams
     {
         public int mLayoutResId;// 布局id
         
