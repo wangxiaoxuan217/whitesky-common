@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/px110">
+
+    <ImageView
+        android:id="@+id/iv_top_back"
+        android:layout_width="@dimen/px68"
+        android:layout_height="@dimen/px68"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/px42"
+        android:background="@drawable/img_iy_top_back" />
+
+    <TextView
+        android:id="@+id/tv_current_title"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px45"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/iv_top_back"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px32" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/px42">
+
+        <ImageView
+            android:id="@+id/iv_wifi_level"
+            android:layout_width="@dimen/px68"
+            android:layout_height="@dimen/px68"
+            android:src="@drawable/img_iy_wifi_no" />
+
+        <LinearLayout
+            android:layout_width="@dimen/px68"
+            android:layout_height="@dimen/px68"
+            android:background="@drawable/img_iy_barry"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_setting_barry_num"
+                android:layout_width="@dimen/px50"
+                android:layout_height="@dimen/px25"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/px21"
+                android:gravity="center"
+                android:text="99%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px20" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_top_setup"
+            android:layout_width="@dimen/px68"
+            android:layout_height="@dimen/px68"
+            android:src="@drawable/img_iy_top_setup" />
+    </LinearLayout>
+</RelativeLayout>
