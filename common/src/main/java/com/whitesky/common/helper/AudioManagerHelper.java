@@ -5,6 +5,7 @@ import android.media.AudioManager;
 
 import androidx.annotation.IntDef;
 
+import com.whitesky.common.R;
 import com.whitesky.common.utils.SharedPreferencesUtil;
 
 import java.lang.annotation.Retention;
@@ -24,6 +25,8 @@ public class AudioManagerHelper
     private int VOICE_STEP_100 = 1; // 0-100的步进。
     
     private static int mVolumeValue = 70; // 设置sound初始化音量值
+    
+    private String mMainText, mIdleText;
     
     /**
      * 封装：STREAM_类型
@@ -66,13 +69,15 @@ public class AudioManagerHelper
     {
         audioManager = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
         mPreferences = new SharedPreferencesUtil(context, "volumePreference");
+        mMainText = context.getString(R.string.str_more_sound_volume_main);
+        mIdleText = context.getString(R.string.str_more_sound_volume_idle);
         if (mPreferences.getBoolean("isIdle", true))
         {
-            mVolumeValue = mPreferences.getInt("idleVolume", 70);
+            mVolumeValue = mPreferences.getInt(mIdleText, 70);
         }
         else
         {
-            mVolumeValue = mPreferences.getInt("mainVolume", 70);
+            mVolumeValue = mPreferences.getInt(mMainText, 70);
         }
     }
     
@@ -174,10 +179,10 @@ public class AudioManagerHelper
         switch (volumeType)
         {
             case 0:
-                mPreferences.putInt("mainVolume", currentValue);
+                mPreferences.putInt(mMainText, currentValue);
                 break;
             case 2:
-                mPreferences.putInt("idleVolume", currentValue);
+                mPreferences.putInt(mIdleText, currentValue);
                 break;
         }
     }

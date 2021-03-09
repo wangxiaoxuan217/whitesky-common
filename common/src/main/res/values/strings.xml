@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">common</string>
+    <string name="str_more_sound_volume_main">Main Volume:</string>
+    <string name="str_more_sound_volume_idle">Idle Volume:</string>
 </resources>
