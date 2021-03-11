@@ -608,9 +608,11 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager
             {
                 // 3. 根据在当前页面中的位置确定具体偏移量
                 int pagePos = pos % mOnePageSize; // 在当前页面中是第几个
-                int row = pagePos / mColumns; // 获取所在行
-                int col = pagePos - (row * mColumns); // 获取所在列
-                offsetX += col * mItemWidth;
+               // int row = pagePos / mColumns; // 获取所在行
+			   int row = pagePos % mRows;
+               // int col = pagePos - (row * mColumns); // 获取所在列
+                int col = pagePos / mRows;
+				offsetX += col * mItemWidth;
                 offsetY += row * mItemHeight;
                 // 状态输出，用于调试
                 // LogUtils.d("pagePos = " + pagePos);
@@ -664,9 +666,9 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager
     private List<Point> getLocationList()
     {
         List<Point> locationList = new ArrayList<>(mRows * mColumns);
-        for (int r = 0; r < mRows; r++)
+        for (int c = 0; c < mColumns; c++)
         {
-            for (int c = 0; c < mColumns; c++)
+            for (int r = 0; r < mRows; r++)
             {
                 locationList.add(new Point(r, c));
             }
