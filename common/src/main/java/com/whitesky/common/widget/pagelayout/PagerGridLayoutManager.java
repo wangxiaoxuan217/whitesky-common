@@ -650,7 +650,7 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager
      */
     private int getUsableWidth()
     {
-        return getWidth() - getPaddingLeft() - getPaddingRight();
+        return (int) ((getWidth() - getPaddingLeft() - getPaddingRight())*0.89);
     }
     
     /**
