@@ -399,7 +399,7 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager
         
         int startPos = 0, stopPos = 0; // 获取第一个条目的Pos
         int pageIndex = getPageIndexByOffset();
-        if (mCellAspectRatio > 0)
+        if (mCellAspectRatio > 0 && mPagesNumber.size()>0)
         {
             if ((pageIndex - 2) < 0)
             {
